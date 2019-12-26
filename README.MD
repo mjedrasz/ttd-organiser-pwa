@@ -1,6 +1,6 @@
 # Things Todo organiser PWA
 
-Organiser's web app that allows creating events and activites for kids.
+Organiser's web app that allows creating events and activities for kids.
 
 ## Getting Started
 
