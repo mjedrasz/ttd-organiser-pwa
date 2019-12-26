@@ -25,7 +25,7 @@ To build the application run
 bash ./build.sh build <stage_here> <region_here>
 ```
 
-for exapmle
+for example
 ```
 bash ./build.sh build test eu-central-1
 ```
@@ -48,7 +48,7 @@ To deploy the application run
 bash ./build.sh deploy <stage_here> <region_here>
 ```
 
-for exapmle
+for example
 ```
 bash ./build.sh deploy test eu-central-1
 ```
