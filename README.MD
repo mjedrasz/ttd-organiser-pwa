@@ -4,7 +4,7 @@ Organiser's web app that allows creating events and activities for kids.
 
 ## Getting Started
 
-This project depends on AWS infrastructure set up by [ttd_infra](https://github.com/mjedrasz/ttd_infra) and [ttd_serverless](https://github.com/mjedrasz/ttd_infra). Please run/install these projects before following the instructions below.
+This project depends on AWS infrastructure set up by [ttd-infra](https://github.com/mjedrasz/ttd-infra) and [ttd-serverless](https://github.com/mjedrasz/ttd-serverless). Please run/install these projects before following the instructions below.
 
 ### Prerequisites
 
