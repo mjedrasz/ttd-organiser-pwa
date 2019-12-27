@@ -17,7 +17,7 @@ describe('Schedule', () => {
       fromTime: new Date(2019, 10, 12, 18, 0, 0, 0),
       toTime: new Date(2019, 10, 12, 20, 0, 0, 0),
       days: [WeekDay.THU, WeekDay.FRI, WeekDay.SAT]
-    }]
+    }];
     const component = renderer.create(<MuiPickersUtilsProvider utils={DateFnsUtils}>
       <Schedule
         schedule={occurrences}

@@ -26,7 +26,7 @@ const labels = {
     [PERSONAL_DEVELOPMENT]: I18n.get("Personal development"),
     [PARTY]: I18n.get("Party"),
     [OTHER]: I18n.get("Other")
-}
+};
 const keys = [
     MUSIC,
     DANCE,

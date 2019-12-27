@@ -62,15 +62,15 @@ export class AuthClass {
         } = config;
         const url = `https://${domain}/oauth2/authorize?identity_provider=${provider}&redirect_uri=${redirectSignIn}&response_type=${responseType}&client_id=${userPoolWebClientId}&scope=${scope.join('+')}`;
         window.location.assign(url);
-    }
+    };
 
     googleSignIn = () => {
         this.socialSignIn(GOOGLE_PROVIDER);
-    }
+    };
 
     facebookSignIn = () => {
         this.socialSignIn(FACEBOOK_PROVIDER);
-    }
+    };
 
     signUp = async (username, password, attributes = {}) =>
         await Auth.signUp({

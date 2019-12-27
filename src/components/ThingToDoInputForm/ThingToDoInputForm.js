@@ -12,7 +12,6 @@ import Chip from '@material-ui/core/Chip';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { Logger } from '@aws-amplify/core';
 import I18n from '@aws-amplify/core/lib/I18n';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
@@ -116,7 +115,7 @@ export default ({ form, disabled }) => {
       ...values,
       thingToDoType: evt.target.value
     });
-  }
+  };
 
   const handleCheckboxChange = name => event => {
     setValues({ ...values, [name]: event.target.checked });
@@ -127,7 +126,7 @@ export default ({ form, disabled }) => {
       ...values,
       [name]: evt.target.value
     });
-  }
+  };
 
   const handleImageChange = (evt) => {
     const { target: { files } } = evt;
@@ -136,14 +135,14 @@ export default ({ form, disabled }) => {
       ...values,
       image: file
     });
-  }
+  };
 
   const handleChange = name => value => {
     setValues({
       ...values,
       [name]: value
     })
-  }
+  };
 
   const addressInput = useInput('address', '', required);
 

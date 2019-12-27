@@ -46,7 +46,7 @@ describe('SignIn', () => {
 
   it('submit button disabled when fields empty', () => {
 
-    const { getByLabelText, getByTestId } = render(<SignIn authState={AuthState.SIGN_IN} />);
+    const { getByTestId } = render(<SignIn authState={AuthState.SIGN_IN} />);
     const submit = getByTestId('submit');
 
     expect(submit).toBeDisabled();

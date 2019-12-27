@@ -42,7 +42,7 @@ const Content = ({ className, message, onClose, variant, ...other }) => {
             {...other}
         />
     );
-}
+};
 
 Content.propTypes = {
     className: PropTypes.string,

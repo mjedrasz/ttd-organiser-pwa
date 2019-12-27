@@ -44,7 +44,7 @@ export default (props) => {
         logger.error("signin in failed", err);
         showToast(I18n.get('Sign in failed'), 'error');
       }
-    };
+    }
   };
 
   const [handleSignIn, submittingSignIn] = useSubmit(signIn);

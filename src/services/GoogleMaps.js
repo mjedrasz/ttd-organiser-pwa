@@ -17,7 +17,7 @@ class GoogleMaps {
             return undefined
         }
         GoogleMaps.autocompleteService.current.getPlacePredictions(input, callback);
-    }
+    };
 
 
     geocode = (address) => {
@@ -26,7 +26,7 @@ class GoogleMaps {
                 reject('geocoder undefined');
             }
             GoogleMaps.geocoder.current.geocode({ 'address': address }, (results, status) => {
-                if (status == 'OK') {
+                if (status === 'OK') {
                     resolve({
                         lat: results[0].geometry.location.lat(),
                         lon: results[0].geometry.location.lng()
@@ -37,6 +37,6 @@ class GoogleMaps {
             });
         })
     };
-};
+}
 
 export default GoogleMaps;

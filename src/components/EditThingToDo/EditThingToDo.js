@@ -49,7 +49,7 @@ export default ({ form, disabled }) => {
             };
             form.setValues(values);
         }
-    }, [data])
+    }, [data]);
 
     return <ThingToDoInputForm form={form} disabled={disabled} />;
 };

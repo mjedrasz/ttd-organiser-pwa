@@ -145,12 +145,12 @@ export default () => {
     };
 
 
-    const LoadingSkeletion = (id) => (
+    const LoadingSkeleton = (id) => (
         <Grid key={id} item xs={12} sm={5} md={3} className={classes.card}  >
             <Card className={classes.card}>
                 <Skeleton variant="rect" className={classes.cardMedia} width="100%" />
                 <CardContent className={classes.cardContent} >
-                    <Typography gutterBottom variant="h5" component="h2" noWrap component="div">
+                    <Typography gutterBottom variant="h5" noWrap component="div">
                         <Skeleton width="60%" />
                     </Typography>
                     <Typography noWrap component="div">
@@ -175,7 +175,7 @@ export default () => {
                     </Fab>
                 </div>
                 <CardContent className={classes.cardContent} >
-                    <Typography gutterBottom variant="h5" component="h2" noWrap component="div">
+                    <Typography gutterBottom variant="h5" noWrap component="div">
                         <Skeleton width="60%" disableAnimate />
                     </Typography>
                     <Typography noWrap component="div">
@@ -188,7 +188,7 @@ export default () => {
                 </CardActions>
             </Card>
         </Grid>
-    )
+    );
 
     const events = loadingItems ? [] : data && data.thingsToDoByStatus.edges || [];
     const pageInfo = loadingItems ? {} : data && data.thingsToDoByStatus.pageInfo || {};
@@ -244,13 +244,13 @@ export default () => {
             await createThingToDo({
                 variables: { input }
             });
-            setOpen(false)
+            setOpen(false);
             setAdd(false)
         } catch (e) {
             logger.error('Add failed', e);
             showToast(I18n.get('Add failed'), 'error');
         }
-    }
+    };
 
     const editThingToDo = async () => {
         let image = null;
@@ -267,13 +267,13 @@ export default () => {
         };
         try {
             await updateThingToDo({ variables: { ...input } });
-            setOpen(false)
+            setOpen(false);
             setEdit(false);
         } catch (e) {
             logger.error('Update failed', e);
             showToast(I18n.get('Update failed'), 'error');
         }
-    }
+    };
 
     const [handleAddThingToDo, submittingAddThingToDo] = useSubmit(addThingToDo);
     const [handleEditThingToDo, submittingEditThingToDo] = useSubmit(editThingToDo);
@@ -284,7 +284,7 @@ export default () => {
         else {
             await handleEditThingToDo(evt);
         }
-    }
+    };
     return (
         <main className={classes.content}>
             <Toast {...toast} />
@@ -317,7 +317,7 @@ export default () => {
                     next={() => {
                         setMore(true);
                         setAfter(data.thingsToDoByStatus.pageInfo.endCursor);
-                        const result = fetchMore({
+                        return fetchMore({
                             variables: {
                                 after: data.thingsToDoByStatus.pageInfo.endCursor
                             },
@@ -336,8 +336,6 @@ export default () => {
                                     : previousResult;
                             }
                         });
-
-                        return result;
                     }}
                     scrollThreshold={0.8}
                     hasMore={pageInfo.hasNextPage === true}
@@ -345,7 +343,7 @@ export default () => {
 
                     <div className={classes.appBarSpacer} />
                     <Grid container spacing={4} >
-                        {loadingItems && [addTile].concat([1, 2, 3, 4, 5, 6, 7, 8].map(c => (<LoadingSkeletion key={c} />)))}
+                        {loadingItems && [addTile].concat([1, 2, 3, 4, 5, 6, 7, 8].map(c => (<LoadingSkeleton key={c} />)))}
                         {!loadingItems && [addTile].concat(events.map(card => (
                             <Grid className={classes.card} item key={card.node.id} xs={12} sm={4} md={3} >
                                 <Card className={classes.card}>
@@ -373,7 +371,7 @@ export default () => {
                                         </Button>
                                     </CardActions>
                                 </Card>
-                            </Grid>)).concat([more && <LoadingSkeletion key='more' />]))}
+                            </Grid>)).concat([more && <LoadingSkeleton key='more' />]))}
                     </Grid>
 
                 </InfiniteScroll>

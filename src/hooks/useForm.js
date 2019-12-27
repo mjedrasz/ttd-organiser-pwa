@@ -15,7 +15,7 @@ const validateField = (fieldValue = '', validationRules) => {
         } else {
             return config;
         }
-    }
+    };
 
     for (const validatorName in validationRules) {
 
@@ -130,7 +130,7 @@ export const useForm = (initialValues) => {
                     ...errors.slice(0, index),
                     ...errors.slice(index + 1)
                 ]);
-            };
+            }
         }
     }, [errors]);
 

@@ -57,7 +57,7 @@ const GoogleMaps = ({ addressInput, onAddressChange, disabled }) => {
         } else {
             onAddressChange('');
         }
-    }
+    };
 
     return (
         <Autocomplete
